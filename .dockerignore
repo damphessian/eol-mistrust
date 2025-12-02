@@ -3,6 +3,9 @@
 *.swp
 .git/
 .gitignore
+/.postgres/
+/code/py2_notebooks/
+/code/py3_converted/
 /data/
 /images/
 /pkl/
