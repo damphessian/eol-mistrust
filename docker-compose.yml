@@ -1,0 +1,17 @@
+# version: "3.8"
+
+services:
+  app:
+    build: .
+    container_name: eol-mistrust
+    volumes:
+      - .:/workspace
+      - ./data:/workspace/data
+      - ./images:/workspace/images
+    ports:
+      - "8888:8888"  # for jupyter
+    environment:
+      POSTGRES_HOST: host.docker.internal
+      POSTGRES_PORT: 5432
+    extra_hosts:
+      - "host.docker.internal:host-gateway"

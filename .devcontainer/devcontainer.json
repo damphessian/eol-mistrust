@@ -1,0 +1,25 @@
+{
+  "name": "eol-mistrust-py36",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspace",
+
+  "settings": {
+    "python.defaultInterpreterPath": "/usr/local/bin/python3.6",
+    "python.analysis.indexing": false
+  },
+
+  "extensions": [
+    "ms-python.python",
+    "ms-toolsai.jupyter"
+  ],
+
+  "forwardPorts": [8888],
+
+  "remoteEnv": {
+    "POSTGRES_HOST": "host.docker.internal",
+    "POSTGRES_PORT": "5432"
+  },
+
+  "overrideCommand": false
+}
