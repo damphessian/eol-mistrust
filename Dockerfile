@@ -21,8 +21,9 @@ RUN pip install --upgrade "pip<21.0" "setuptools<50" "wheel<0.37"
 COPY requirements_py36.txt /workspace/requirements.txt
 RUN pip install -r /workspace/requirements.txt
 
-# Install modified fork of abandoned library (drops mysql dependency)
-RUN pip install git+https://github.com/inertialgradient/pattern.git
+# Install modified fork of abandoned Pattern library (drops mysql dependency)
+COPY vendor/pattern/pattern-*.tar.gz /tmp/pattern.tar.gz
+RUN pip install /tmp/pattern.tar.gz
 
 # Keep container alive
 CMD ["tail", "-f", "/dev/null"]
